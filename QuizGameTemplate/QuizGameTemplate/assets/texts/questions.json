@@ -1,0 +1,86 @@
+[
+	{
+		"imagePath": "res://assets/images/01.png",
+		"question": "What is the name of the author?",
+		"options": ["Truong", "Troung", "Chau", "Trueng"],
+		"correctOptionIndex": 0
+	},
+	{
+		"imagePath": "res://assets/images/02.jpg",
+		"question": "What is the name of his big dog?",
+		"options": ["Lu", "Benzi", "Kiki", "Bush"],
+		"correctOptionIndex": 2
+	},
+	{
+		"imagePath": "res://assets/images/03.jpg",
+		"question": "His top favorite movie creature?",
+		"options": ["Alien", "Spider", "Shark", "Dragon"],
+		"correctOptionIndex": 3
+	},
+	{
+		"imagePath": "res://assets/images/04.jpg",
+		"question": "What he's trying to be (now)?",
+		"options": ["Famous", "Loved", "Peaceful", "Happy"],
+		"correctOptionIndex": 2
+	},
+	{
+		"imagePath": "res://assets/images/05.jpg",
+		"question": "What is his favourite topics to sculpt?",
+		"options": ["Nude women", "Animals/ Creatures", "Portraits", "All of above"],
+		"correctOptionIndex": 3
+	},
+	{
+		"imagePath": "res://assets/images/06.jpg",
+		"question": "His favourite singer?",
+		"options": ["Đen Vâu", "Lê Cát Trọng Lý", "tlinh", "Vũ Thanh Vân"],
+		"correctOptionIndex": 0
+	},
+	{
+		"imagePath": "res://assets/images/07.jpg",
+		"question": "Where he first learnt his anatomy knowledge (and truly understand it)?",
+		"options": ["Scott Eaton", "Dẫu Phải Giải Phẩu", "Ebooks", "By looking at Ecorches"],
+		"correctOptionIndex": 1
+	},
+	{
+		"imagePath": "res://assets/images/08.jpg",
+		"question": "What he use to SCULPT on his ipad mini?",
+		"options": ["Nomad", "Procreate", "Forger", "Sculptura"],
+		"correctOptionIndex": 2
+	},
+	{
+		"imagePath": "res://assets/images/09.jpg",
+		"question": "Why he draw a lot (the initial reason)?",
+		"options": ["To win the heart of someone","To improve his drawing skill", "To improve his observational skills", "To relax"],
+		"correctOptionIndex": 0
+	},
+	{
+		"imagePath": "res://assets/images/10.jpg",
+		"question": "What he will do about AI wave?",
+		"options": ["Go traditional", "Do games/app", "Ignore it", "Give up"],
+		"correctOptionIndex": 1
+	},
+	{
+		"imagePath": "res://assets/images/11.jpg",
+		"question": "What he think AI canNOT do?",
+		"options": ["Soul in art", "Customization", "Creativity", "Kill his passion for art"],
+		"correctOptionIndex": 3
+	},
+	{
+		"imagePath": "res://assets/images/12.jpg",
+		"question": "To him, how NOT to beat AI?",
+		"options": ["Make end products (comic, ip, app...)", "Build personal brand", "Find your niche, go deep", "Sue /complain AI companies for stealing art"],
+		"correctOptionIndex": 3
+	},
+	{
+		"imagePath": "res://assets/images/13.jpg",
+		"question": "What he value the most (in theory)?",
+		"options": ["Health", "Wealth", "Happiness", "Love"],
+		"correctOptionIndex": 0
+	},
+	{
+		"imagePath": "res://assets/images/14.jpg",
+		"question": "What should is he carrying?",
+		"options": ["What should have been", "The now", "Resentment", "Old relationships"],
+		"correctOptionIndex": 1
+	}
+]
