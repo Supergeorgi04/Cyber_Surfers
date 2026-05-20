@@ -1,6 +1,6 @@
 extends Control
 
-@onready var QuestionItems = $VBoxContainer/QuestionTexts
+@onready var QuestionItems = $VBoxContainer/PanelContainer/QuestionTexts
 @onready var AnswersList = $AnswersList
 @onready var QuestionImage = $ImageRect
 @onready var RestartButton = $RestartButton

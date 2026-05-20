@@ -1,9 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb7jbbuaq8ich"]
+[gd_scene format=3 uid="uid://bb7jbbuaq8ich"]
 
-[ext_resource type="Script" path="res://scenes/Main.gd" id="1_wuq2g"]
+[ext_resource type="Script" uid="uid://baor8tn2kiaf6" path="res://scenes/Main.gd" id="1_wuq2g"]
+[ext_resource type="Texture2D" uid="uid://dbgcuygogx8ea" path="res://assets/images/surfer002.png" id="2_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://ct0730xrvvcei" path="res://assets/images/01.png" id="2_nu2dp"]
+[ext_resource type="Texture2D" uid="uid://cn7k1bm6qu534" path="res://assets/images/bg_3.png" id="2_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://dv1e7qq4ecytw" path="res://assets/images/bg_2.png" id="3_c01mt"]
+[ext_resource type="Texture2D" uid="uid://dbf5kjriry0g7" path="res://assets/images/virus04.png" id="3_rarhs"]
 
-[node name="Control" type="Control"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvslj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0bbpv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcsgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rarhs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control" unique_id=1664501739]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,17 +38,49 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wuq2g")
 
-[node name="BG_ColorRect" type="ColorRect" parent="."]
+[node name="ParallaxLayer1" type="Parallax2D" parent="." unique_id=368555492]
+repeat_size = Vector2(1280, 720)
+autoscroll = Vector2(-400, 0)
+follow_viewport = false
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer1" unique_id=1038416018]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_vcsgt")
+stretch_mode = 1
+
+[node name="ParallaxLayer2" type="Parallax2D" parent="." unique_id=739585997]
+repeat_size = Vector2(1280, 720)
+autoscroll = Vector2(-800, 0)
+follow_viewport = false
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2" unique_id=450780424]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_c01mt")
+stretch_mode = 1
+
+[node name="BG_ColorRect" type="ColorRect" parent="." unique_id=856382022]
+self_modulate = Color(1, 1, 1, 0.7058824)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.72549, 0.807843, 1, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="AnswersList" type="ItemList" parent="."]
-visible = false
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=415037549]
+position = Vector2(1124, 573)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_rvslj")
+
+[node name="VirusSprite" type="AnimatedSprite2D" parent="." unique_id=1665898517]
+position = Vector2(399, 386)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_vcsgt")
+
+[node name="AnswersList" type="ItemList" parent="." unique_id=1788075931]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -31,7 +89,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -450.0
 offset_top = -256.0
-offset_right = 450.0
+offset_right = 24.0
 offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -41,12 +99,12 @@ allow_reselect = true
 item_count = 4
 same_column_width = true
 fixed_column_width = 500
-item_0/text = "100000000000000000"
-item_1/text = "2000000000000000000000000000000000000"
-item_2/text = "30000000000000000000000000000000"
-item_3/text = "40000000000000000000000000000"
+item_0/text = "Choice 1"
+item_1/text = "Choice 2"
+item_2/text = "Choice 3"
+item_3/text = "Choice 4"
 
-[node name="RestartButton" type="Button" parent="."]
+[node name="RestartButton" type="Button" parent="." unique_id=63445367]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -62,7 +120,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Restart"
 
-[node name="RestartButtonAlways" type="Button" parent="."]
+[node name="RestartButtonAlways" type="Button" parent="." unique_id=56623277]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -78,27 +136,32 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Restart"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(1280, 120)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2125387395]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -640.0
-offset_top = 13.0
+offset_top = 3.0
 offset_right = 640.0
-offset_bottom = 133.0
+offset_bottom = 123.0
 grow_horizontal = 2
+alignment = 1
 
-[node name="QuestionTexts" type="Label" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1776668864]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="QuestionTexts" type="Label" parent="VBoxContainer/PanelContainer" unique_id=851495079]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "question texts"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="ImageRect" type="TextureRect" parent="."]
+[node name="ImageRect" type="TextureRect" parent="." unique_id=3699304]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -112,7 +175,7 @@ texture = ExtResource("2_nu2dp")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="WrongNumber" type="Label" parent="."]
+[node name="WrongNumber" type="Label" parent="." unique_id=783389616]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -128,7 +191,7 @@ theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Wrong"
 
-[node name="ScoreNumber" type="Label" parent="."]
+[node name="ScoreNumber" type="Label" parent="." unique_id=492883213]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -145,7 +208,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Score"
 
-[node name="CorrectAnswer" type="Label" parent="."]
+[node name="CorrectAnswer" type="Label" parent="." unique_id=1607573084]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -162,7 +225,7 @@ theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
 theme_override_font_sizes/font_size = 32
 text = "The correct answer is:"
 
-[node name="OK" type="Button" parent="."]
+[node name="OK" type="Button" parent="." unique_id=671309394]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -178,7 +241,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Okie, got it!"
 
-[node name="Correct" type="Button" parent="."]
+[node name="Correct" type="Button" parent="." unique_id=298092653]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
