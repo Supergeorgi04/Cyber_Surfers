@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb7jbbuaq8ich"]
+[gd_scene format=3 uid="uid://bb7jbbuaq8ich"]
 
-[ext_resource type="Script" path="res://scenes/Main.gd" id="1_wuq2g"]
+[ext_resource type="Script" uid="uid://baor8tn2kiaf6" path="res://scripts/Main.gd" id="1_wuq2g"]
 [ext_resource type="Texture2D" uid="uid://ct0730xrvvcei" path="res://assets/images/01.png" id="2_nu2dp"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=1200578067]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wuq2g")
 
-[node name="BG_ColorRect" type="ColorRect" parent="."]
+[node name="BG_ColorRect" type="ColorRect" parent="." unique_id=91848471]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.72549, 0.807843, 1, 1)
 
-[node name="AnswersList" type="ItemList" parent="."]
+[node name="AnswersList" type="ItemList" parent="." unique_id=151096104]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -46,7 +46,7 @@ item_1/text = "2000000000000000000000000000000000000"
 item_2/text = "30000000000000000000000000000000"
 item_3/text = "40000000000000000000000000000"
 
-[node name="RestartButton" type="Button" parent="."]
+[node name="RestartButton" type="Button" parent="." unique_id=113815127]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -62,7 +62,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Restart"
 
-[node name="RestartButtonAlways" type="Button" parent="."]
+[node name="RestartButtonAlways" type="Button" parent="." unique_id=958483657]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -78,7 +78,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Restart"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1988165688]
 custom_minimum_size = Vector2(1280, 120)
 layout_mode = 1
 anchors_preset = 5
@@ -90,7 +90,7 @@ offset_right = 640.0
 offset_bottom = 133.0
 grow_horizontal = 2
 
-[node name="QuestionTexts" type="Label" parent="VBoxContainer"]
+[node name="QuestionTexts" type="Label" parent="VBoxContainer" unique_id=1224254552]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
@@ -98,7 +98,7 @@ text = "question texts"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ImageRect" type="TextureRect" parent="."]
+[node name="ImageRect" type="TextureRect" parent="." unique_id=1175381510]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -112,7 +112,7 @@ texture = ExtResource("2_nu2dp")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="WrongNumber" type="Label" parent="."]
+[node name="WrongNumber" type="Label" parent="." unique_id=1119669603]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -128,7 +128,7 @@ theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Wrong"
 
-[node name="ScoreNumber" type="Label" parent="."]
+[node name="ScoreNumber" type="Label" parent="." unique_id=731971072]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -145,7 +145,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Score"
 
-[node name="CorrectAnswer" type="Label" parent="."]
+[node name="CorrectAnswer" type="Label" parent="." unique_id=779408159]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -162,7 +162,7 @@ theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
 theme_override_font_sizes/font_size = 32
 text = "The correct answer is:"
 
-[node name="OK" type="Button" parent="."]
+[node name="OK" type="Button" parent="." unique_id=2109946781]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -178,7 +178,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Okie, got it!"
 
-[node name="Correct" type="Button" parent="."]
+[node name="Correct" type="Button" parent="." unique_id=372422454]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dcdgswolxuop5"]
+
+[ext_resource type="Script" uid="uid://inh1ajasw5x2" path="res://scripts/start_button.gd" id="1_fgkus"]
+
+[node name="title screen" type="Control" unique_id=1419185666]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start button" type="Button" parent="." unique_id=643451900]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 262.0
+offset_right = 753.0
+offset_bottom = 361.0
+text = "start"
+script = ExtResource("1_fgkus")
+
+[connection signal="pressed" from="start button" to="start button" method="_on_pressed"]
