@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://dcdgswolxuop5"]
 
 [ext_resource type="Script" uid="uid://inh1ajasw5x2" path="res://scripts/start_button.gd" id="1_fgkus"]
+[ext_resource type="FontFile" uid="uid://lk2vptkd771d" path="res://assets/texts/f2-tecnocratica-ffp.ttf" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://dalpjq0uod8f7" path="res://assets/images/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg" id="3_s4lrb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mgrm8"]
+texture = ExtResource("3_s4lrb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgkus"]
+bg_color = Color(0.69411767, 0.5137255, 0.14117648, 0.76862746)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_size = 5
 
 [node name="title screen" type="Control" unique_id=1419185666]
 layout_mode = 3
@@ -10,13 +24,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Panel" type="Panel" parent="." unique_id=1927153668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mgrm8")
+
 [node name="start button" type="Button" parent="." unique_id=643451900]
-layout_mode = 0
-offset_left = 437.0
-offset_top = 262.0
-offset_right = 753.0
-offset_bottom = 361.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -39.5
+offset_right = 125.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sa3yf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgkus")
 text = "start"
 script = ExtResource("1_fgkus")
+
+[node name="Label" type="Label" parent="." unique_id=2066881553]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -201.0
+offset_top = 30.0
+offset_right = 202.0
+offset_bottom = 171.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_sa3yf")
+theme_override_font_sizes/font_size = 60
+text = "knoledge runner
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="start button" to="start button" method="_on_pressed"]
