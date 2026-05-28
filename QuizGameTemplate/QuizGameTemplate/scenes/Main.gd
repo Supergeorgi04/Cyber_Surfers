@@ -1,15 +1,17 @@
 extends Control
 
-@onready var QuestionItems = $VBoxContainer/PanelContainer/QuestionTexts
-@onready var AnswersList = $AnswersList
-@onready var QuestionImage = $ImageRect
-@onready var RestartButton = $RestartButton
-@onready var RestartButtonAlways = $RestartButtonAlways
-@onready var WrongNumber = $WrongNumber
-@onready var ScoreNumber = $ScoreNumber
-@onready var CorrectAnswer = $CorrectAnswer
-@onready var OKButton = $OK
-@onready var Congratulation = $Correct
+@onready var QuestionItems = $UI/VBoxContainer/PanelContainer/QuestionTexts
+@onready var AnswersList = $UI/AnswersList
+@onready var QuestionImage = $UI/ImageRect
+@onready var RestartButton = $UI/RestartButton
+@onready var RestartButtonAlways = $UI/RestartButtonAlways
+@onready var WrongNumber = $UI/WrongNumber
+@onready var ScoreNumber = $UI/ScoreNumber
+@onready var CorrectAnswer = $UI/CorrectAnswer
+@onready var OKButton = $UI/OK
+@onready var Congratulation = $UI/Correct
+@onready var Result = $UI/Result
+@onready var AnimPlay = $AnimationPlayer
 
 var items: Array
 var item: Dictionary
@@ -21,12 +23,14 @@ var updatedCorrectAnswerIndex: int
 func _ready():
 	items = read_json_file("res://assets/texts/questions.json")
 	items.shuffle()
-	show_questions()
 	displayScore()
+	Result.hide()
+	prepareCutscene()
+	cutsceneStartQuestion()
 
 func displayScore():
 	WrongNumber.text = "Wrong: " + str(wrong)
-	ScoreNumber.text = "Score: " + str(correct)+"/"+str(items.size())
+	ScoreNumber.text = "Score: " + str(int(correct)) #+"/"+str(items.size())
 
 func show_questions():
 	CorrectAnswer.hide()
@@ -37,7 +41,8 @@ func show_questions():
 	ScoreNumber.show()
 	RestartButton.hide()
 	AnswersList.clear()
-	WrongNumber.show()
+	#WrongNumber.show()
+	QuestionItems.show()
 	item = items[index_item]
 	QuestionItems.text = item.question
 	QuestionImage.texture = load(item.imagePath)
@@ -72,19 +77,22 @@ func show_result():
 	QuestionItems.text = "{greet} You're correct {percentage} %".format({"greet": greet, "percentage": percentage})
 
 func refresh_scene():
+	index_item +=1
 	if index_item >= items.size():
 		show_result()
 	else:
-		show_questions()
-		displayScore()
+		AnimPlay.play("Resume")
+		await AnimPlay.animation_finished
+		prepareCutscene()
+		cutsceneStartQuestion()
 
 func read_json_file(filename):
 	var json_as_text = FileAccess.get_file_as_string(filename)
 	var json_as_dict = JSON.parse_string(json_as_text)
 	return json_as_dict
 
-func show_correct_answer():
-	AnswersList.hide()
+func show_failure():
+	"""AnswersList.hide()
 	ScoreNumber.show()
 	RestartButton.hide()
 	QuestionImage.show()
@@ -93,10 +101,15 @@ func show_correct_answer():
 	Congratulation.hide()
 	WrongNumber.show()
 	item = items[index_item]
-	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]
+	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]"""
+	prepareCutscene()
+	AnimPlay.play("Answer_Wrong")
+	await AnimPlay.animation_finished
+	displayScore()
+	refresh_scene()
 
 func show_congratulations():
-	AnswersList.hide()
+	"""AnswersList.hide()
 	ScoreNumber.show()
 	RestartButton.hide()
 	QuestionImage.hide()
@@ -105,7 +118,34 @@ func show_congratulations():
 	Congratulation.show()
 	WrongNumber.show()
 	item = items[index_item]
-	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]
+	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]"""
+	prepareCutscene()
+	AnimPlay.play("Answer_Correct")
+	await AnimPlay.animation_finished
+	displayScore()
+	refresh_scene()
+
+func prepareCutscene():
+	AnswersList.hide()
+	Congratulation.hide()
+	QuestionImage.hide()
+	CorrectAnswer.hide()
+	OKButton.hide()
+	RestartButton.hide()
+	RestartButtonAlways.hide()
+	QuestionItems.hide()
+	WrongNumber.hide()
+	ScoreNumber.show()
+
+
+func cutsceneStartQuestion():
+	AnimPlay.play("Wait")
+	await AnimPlay.animation_finished
+	AnimPlay.play("Question_Start")
+	await AnimPlay.animation_finished
+	show_questions()
+
+
 
 func _on_ok_pressed():
 	index_item +=1
@@ -121,7 +161,7 @@ func _on_answers_list_item_selected(index):
 		show_congratulations()
 	else:
 		wrong +=1
-		show_correct_answer()
+		show_failure()
 		
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()

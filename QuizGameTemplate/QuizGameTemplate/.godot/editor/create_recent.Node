@@ -1,6 +1,9 @@
+AnimatedSprite2D
 Sprite2D
+CanvasLayer
+Camera2D
+AnimationPlayer
 TextureRect
 Parallax2D
-AnimatedSprite2D
 PanelContainer
 ColorRect

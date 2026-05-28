@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://baor8tn2kiaf6" path="res://scenes/Main.gd" id="1_wuq2g"]
 [ext_resource type="Texture2D" uid="uid://dbgcuygogx8ea" path="res://assets/images/surfer002.png" id="2_0bbpv"]
-[ext_resource type="Texture2D" uid="uid://ct0730xrvvcei" path="res://assets/images/01.png" id="2_nu2dp"]
 [ext_resource type="Texture2D" uid="uid://cn7k1bm6qu534" path="res://assets/images/bg_3.png" id="2_vcsgt"]
 [ext_resource type="Texture2D" uid="uid://dv1e7qq4ecytw" path="res://assets/images/bg_2.png" id="3_c01mt"]
 [ext_resource type="Texture2D" uid="uid://dbf5kjriry0g7" path="res://assets/images/virus04.png" id="3_rarhs"]
+[ext_resource type="Texture2D" uid="uid://coo4n5ed5msdf" path="res://assets/images/15.jpg" id="6_c01mt"]
+[ext_resource type="Texture2D" uid="uid://bte8ywioakn8n" path="res://assets/images/bg_1.png" id="7_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://ct4s8ycd0xm47" path="res://assets/images/ui_correct.png" id="8_q8u5g"]
+[ext_resource type="Texture2D" uid="uid://y2tw33obxu3y" path="res://assets/images/ui_wrong.png" id="9_lhr70"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rvslj"]
 animations = [{
@@ -26,6 +29,597 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_wp0k4"]
+resource_name = "CorrectAnswer"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(900, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(4.141059),
+"update": 0,
+"values": [Vector2(1010, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(4.438277),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VirusSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxLayer1:autoscroll")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-100, 0), Vector2(-400, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParallaxLayer2:autoscroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(-800, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ObstacleSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(2.0705302),
+"update": 0,
+"values": [Vector2(128, 656)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UI/Result:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"correct"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("UI/Result:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.40000004),
+"transitions": PackedFloat32Array(2.7320802, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UI/Result:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UI/Result:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5235987755982988, 0.2199114857512859, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bjd11"]
+resource_name = "Answer_Wrong"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(900, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(4.141059),
+"update": 0,
+"values": [Vector2(1010, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(4.438277),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VirusSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxLayer1:autoscroll")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-100, 0), Vector2(-400, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParallaxLayer2:autoscroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(-800, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ObstacleSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(2.0705302),
+"update": 0,
+"values": [Vector2(128, 656)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UI/Result:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"incorrect"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("UI/Result:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 1.2, 1.5000001),
+"transitions": PackedFloat32Array(2.7320802, 1, 3, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(2, 2), Vector2(2, 2), Vector2(1.9, 1.9)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UI/Result:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UI/Result:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 3, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.17453292519943295]
+}
+
+[sub_resource type="Animation" id="Animation_nxtc6"]
+resource_name = "Question_Start"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 5.8563704, 1),
+"update": 0,
+"values": [Vector2(1000, 550), Vector2(1000, 592), Vector2(900, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 4.141059),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(1010, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 4.438277),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VirusSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.5),
+"transitions": PackedFloat32Array(5.8563447, 1),
+"update": 0,
+"values": [Vector2(360, 400), Vector2(160, 400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxLayer1:autoscroll")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-400, 0), Vector2(-100, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParallaxLayer2:autoscroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-800, 0), Vector2(-200, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ObstacleSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.43333334, 0.6),
+"transitions": PackedFloat32Array(1, 2.0705302),
+"update": 0,
+"values": [Vector2(1344, 656), Vector2(128, 656)]
+}
+
+[sub_resource type="Animation" id="Animation_jlsqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 550)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VirusSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxLayer1:autoscroll")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-400, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ObstacleSprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1344, 656)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParallaxLayer2:autoscroll")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-800, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UI/Result:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("UI/Result:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UI/Result:animation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"correct"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UI/Result:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lhr70"]
+resource_name = "CorrectAnswer"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 5.8563704, 1),
+"update": 0,
+"values": [Vector2(900, 300), Vector2(1000, 592), Vector2(1000, 550)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666665),
+"transitions": PackedFloat32Array(4.141059, 4.141059, 1),
+"update": 0,
+"values": [Vector2(1010, 360), Vector2(1010, 360), Vector2(640, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666665),
+"transitions": PackedFloat32Array(4.438277, 4.438277, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VirusSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666665),
+"transitions": PackedFloat32Array(1, 1, 5.8563447),
+"update": 0,
+"values": [Vector2(160, 400), Vector2(160, 400), Vector2(360, 400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ObstacleSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1344, 656)]
+}
+
+[sub_resource type="Animation" id="Animation_q8u5g"]
+resource_name = "Wait"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlsqs"]
+_data = {
+&"Answer_Correct": SubResource("Animation_wp0k4"),
+&"Answer_Wrong": SubResource("Animation_bjd11"),
+&"Question_Start": SubResource("Animation_nxtc6"),
+&"RESET": SubResource("Animation_jlsqs"),
+&"Resume": SubResource("Animation_lhr70"),
+&"Wait": SubResource("Animation_q8u5g")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxtc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_q8u5g")
+}],
+"loop": false,
+"name": &"correct",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lhr70")
+}],
+"loop": true,
+"name": &"incorrect",
 "speed": 5.0
 }]
 
@@ -71,17 +665,35 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=415037549]
-position = Vector2(1124, 573)
+position = Vector2(1000, 550)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_rvslj")
 
 [node name="VirusSprite" type="AnimatedSprite2D" parent="." unique_id=1665898517]
-position = Vector2(399, 386)
+position = Vector2(360, 400)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_vcsgt")
 
-[node name="AnswersList" type="ItemList" parent="." unique_id=1788075931]
-layout_mode = 1
+[node name="ObstacleSprite" type="Sprite2D" parent="." unique_id=240524944]
+position = Vector2(1344, 656)
+scale = Vector2(4, 4)
+texture = ExtResource("7_nxtc6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1322764]
+position = Vector2(640, 360)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=861289603]
+libraries/ = SubResource("AnimationLibrary_jlsqs")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=612930924]
+
+[node name="AnswersList" type="ItemList" parent="UI" unique_id=1788075931]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -104,15 +716,14 @@ item_1/text = "Choice 2"
 item_2/text = "Choice 3"
 item_3/text = "Choice 4"
 
-[node name="RestartButton" type="Button" parent="." unique_id=63445367]
-layout_mode = 1
+[node name="RestartButton" type="Button" parent="UI" unique_id=63445367]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -100.0
-offset_top = -385.0
+offset_top = -395.0
 offset_right = 100.0
 offset_bottom = -345.0
 grow_horizontal = 2
@@ -120,8 +731,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Restart"
 
-[node name="RestartButtonAlways" type="Button" parent="." unique_id=56623277]
-layout_mode = 1
+[node name="RestartButtonAlways" type="Button" parent="UI" unique_id=56623277]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -136,8 +746,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Restart"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2125387395]
-layout_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=2125387395]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -148,10 +757,10 @@ offset_bottom = 123.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1776668864]
+[node name="PanelContainer" type="PanelContainer" parent="UI/VBoxContainer" unique_id=1776668864]
 layout_mode = 2
 
-[node name="QuestionTexts" type="Label" parent="VBoxContainer/PanelContainer" unique_id=851495079]
+[node name="QuestionTexts" type="Label" parent="UI/VBoxContainer/PanelContainer" unique_id=851495079]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -161,8 +770,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ImageRect" type="TextureRect" parent="." unique_id=3699304]
-layout_mode = 1
+[node name="ImageRect" type="TextureRect" parent="UI" unique_id=3699304]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -171,12 +779,11 @@ offset_top = 119.0
 offset_right = 612.5
 offset_bottom = 457.0
 grow_horizontal = 2
-texture = ExtResource("2_nu2dp")
+texture = ExtResource("6_c01mt")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="WrongNumber" type="Label" parent="." unique_id=783389616]
-layout_mode = 1
+[node name="WrongNumber" type="Label" parent="UI" unique_id=783389616]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -191,8 +798,7 @@ theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Wrong"
 
-[node name="ScoreNumber" type="Label" parent="." unique_id=492883213]
-layout_mode = 1
+[node name="ScoreNumber" type="Label" parent="UI" unique_id=492883213]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -204,12 +810,11 @@ offset_right = 214.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 28
 text = "Score"
 
-[node name="CorrectAnswer" type="Label" parent="." unique_id=1607573084]
-layout_mode = 1
+[node name="CorrectAnswer" type="Label" parent="UI" unique_id=1607573084]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -221,12 +826,11 @@ offset_right = 526.0
 offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "The correct answer is:"
 
-[node name="OK" type="Button" parent="." unique_id=671309394]
-layout_mode = 1
+[node name="OK" type="Button" parent="UI" unique_id=671309394]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -241,24 +845,32 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Okie, got it!"
 
-[node name="Correct" type="Button" parent="." unique_id=298092653]
-layout_mode = 1
+[node name="Correct" type="Button" parent="UI" unique_id=298092653]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -84.0
+offset_left = -230.0
 offset_top = -128.0
-offset_right = 92.0
+offset_right = 238.0
 offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Congratulations! You're correct."
 
-[connection signal="item_selected" from="AnswersList" to="." method="_on_answers_list_item_selected"]
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="RestartButtonAlways" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="OK" to="." method="_on_ok_pressed"]
-[connection signal="pressed" from="Correct" to="." method="_on_correct_pressed"]
+[node name="Result" type="AnimatedSprite2D" parent="UI" unique_id=1030309103]
+modulate = Color(1, 1, 1, 255)
+self_modulate = Color(1, 1, 1, 255)
+position = Vector2(640, 557)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nxtc6")
+animation = &"correct"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="item_selected" from="UI/AnswersList" to="." method="_on_answers_list_item_selected"]
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/RestartButtonAlways" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/OK" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="UI/Correct" to="." method="_on_correct_pressed"]
