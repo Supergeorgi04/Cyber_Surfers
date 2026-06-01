@@ -33,6 +33,7 @@ func _ready():
 	Life2.play("default")
 	Life3.play("default")
 	$VirusSprite.play("walk")
+	$PlayerSprite.play("default")
 	Result.hide()
 	prepareCutscene()
 	cutsceneStartQuestion()
@@ -146,6 +147,8 @@ func cutsceneStartQuestion():
 
 
 func gameOver():
+	AnimPlay.play("GameOver")
+	await AnimPlay.animation_finished
 	prepareCutscene()
 	if correct > highscore:
 		highscore = correct
