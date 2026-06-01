@@ -16,5 +16,11 @@
 		"question": "Τί είναι το απεικονιζόμενο:",
 		"options": ["Ποντίκι", "Κάρτα Γραφικών", "Πύργος", "Επεξεργαστής"],
 		"correctOptionIndex": 3
+	},
+	{
+		"imagePath": "",
+		"question": "Η απάντηση είναι το Α",
+		"options": ["Α", "Β", "Γ", "Δ"],
+		"correctOptionIndex": 0
 	}
 ]

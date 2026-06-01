@@ -12,25 +12,34 @@ extends Control
 @onready var Congratulation = $UI/Correct
 @onready var Result = $UI/Result
 @onready var AnimPlay = $AnimationPlayer
+@onready var Life1 = $UI/Life1
+@onready var Life2 = $UI/Life2
+@onready var Life3 = $UI/Life3
 
 var items: Array
 var item: Dictionary
 var index_item: int = 0
 var wrong: int = 0
-var correct: float = 0
+var correct: int = 0
 var updatedCorrectAnswerIndex: int
+var lives: int = 3
+var highscore: int = SaveManager.loadScore()
 
 func _ready():
 	items = read_json_file("res://assets/texts/questions.json")
 	items.shuffle()
 	displayScore()
+	Life1.play("default")
+	Life2.play("default")
+	Life3.play("default")
+	$VirusSprite.play("walk")
 	Result.hide()
 	prepareCutscene()
 	cutsceneStartQuestion()
 
 func displayScore():
 	WrongNumber.text = "Wrong: " + str(wrong)
-	ScoreNumber.text = "Score: " + str(int(correct)) #+"/"+str(items.size())
+	ScoreNumber.text = "Score: " + str(correct) #+"/"+str(items.size())
 
 func show_questions():
 	CorrectAnswer.hide()
@@ -41,7 +50,6 @@ func show_questions():
 	ScoreNumber.show()
 	RestartButton.hide()
 	AnswersList.clear()
-	#WrongNumber.show()
 	QuestionItems.show()
 	item = items[index_item]
 	QuestionItems.text = item.question
@@ -80,6 +88,8 @@ func refresh_scene():
 	index_item +=1
 	if index_item >= items.size():
 		show_result()
+	else: if lives == 0:
+		gameOver()
 	else:
 		AnimPlay.play("Resume")
 		await AnimPlay.animation_finished
@@ -92,35 +102,24 @@ func read_json_file(filename):
 	return json_as_dict
 
 func show_failure():
-	"""AnswersList.hide()
-	ScoreNumber.show()
-	RestartButton.hide()
-	QuestionImage.show()
-	CorrectAnswer.show()
-	OKButton.show()
-	Congratulation.hide()
-	WrongNumber.show()
-	item = items[index_item]
-	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]"""
 	prepareCutscene()
+	lives = lives - 1
+	if lives == 2:
+		Life3.play("lost")
+	else: if lives == 1:
+		Life2.play("lost")
+	else:
+		Life1.play("lost")
 	AnimPlay.play("Answer_Wrong")
+	$VirusSprite.play("walk")
 	await AnimPlay.animation_finished
 	displayScore()
 	refresh_scene()
 
 func show_congratulations():
-	"""AnswersList.hide()
-	ScoreNumber.show()
-	RestartButton.hide()
-	QuestionImage.hide()
-	CorrectAnswer.show()
-	OKButton.hide()
-	Congratulation.show()
-	WrongNumber.show()
-	item = items[index_item]
-	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]"""
 	prepareCutscene()
 	AnimPlay.play("Answer_Correct")
+	$VirusSprite.play("walk")
 	await AnimPlay.animation_finished
 	displayScore()
 	refresh_scene()
@@ -146,6 +145,17 @@ func cutsceneStartQuestion():
 	show_questions()
 
 
+func gameOver():
+	prepareCutscene()
+	if correct > highscore:
+		highscore = correct
+		SaveManager.saveScore(highscore)
+		QuestionItems.text = "New High Score!\nYour Score: {score}".format({"score": correct})
+	else:
+		QuestionItems.text = "Game Over.\nYour Score: {score}\nHigh Score: {high}".format({"score": correct, "high": highscore})
+	QuestionItems.show()
+	RestartButton.show()
+
 
 func _on_ok_pressed():
 	index_item +=1
@@ -165,3 +175,8 @@ func _on_answers_list_item_selected(index):
 		
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
+	
+func _process(delta):
+	if Input.is_action_pressed("debug_kill"):
+		lives = 1
+		print("kill")
