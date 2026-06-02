@@ -24,6 +24,8 @@ var correct: int = 0
 var updatedCorrectAnswerIndex: int
 var lives: int = 3
 var highscore: int = SaveManager.loadScore()
+var timerRunning: bool
+var timerWait: float = 30.0
 
 func _ready():
 	items = read_json_file("res://assets/texts/questions.json")
@@ -52,6 +54,9 @@ func show_questions():
 	RestartButton.hide()
 	AnswersList.clear()
 	QuestionItems.show()
+	$UI/TimerBar.show()
+	$UI/Timer.start(timerWait)
+	timerRunning = true
 	item = items[index_item]
 	QuestionItems.text = item.question
 	QuestionImage.texture = load(item.imagePath)
@@ -62,6 +67,7 @@ func show_questions():
 		if option == correctAnswer:
 			updatedCorrectAnswerIndex = options.find(option,0)
 	print(options)
+	print(correctAnswer)
 	for option in options:
 		AnswersList.add_item(option)
 
@@ -86,10 +92,19 @@ func show_result():
 	QuestionItems.text = "{greet} You're correct {percentage} %".format({"greet": greet, "percentage": percentage})
 
 func refresh_scene():
+	timerWait -= 0.2
+	if timerWait < 1:
+		timerWait = 1
+	print(timerWait)
+	
 	index_item +=1
+	##if index_item >= items.size():
+		##show_result()
 	if index_item >= items.size():
-		show_result()
-	else: if lives == 0:
+		index_item = 0
+		items = read_json_file("res://assets/texts/questions.json")
+		items.shuffle()
+	if lives == 0:
 		gameOver()
 	else:
 		AnimPlay.play("Resume")
@@ -136,6 +151,8 @@ func prepareCutscene():
 	QuestionItems.hide()
 	WrongNumber.hide()
 	ScoreNumber.show()
+	$UI/TimerBar.hide()
+	timerRunning = false
 
 
 func cutsceneStartQuestion():
@@ -178,8 +195,16 @@ func _on_answers_list_item_selected(index):
 		
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
-	
-func _process(delta):
+
+
+
+func _process(_delta):
 	if Input.is_action_pressed("debug_kill"):
 		lives = 1
 		print("kill")
+	
+	#Timer Code
+	if($UI/Timer.time_left >= 0):
+		$UI/TimerBar.value = ($UI/Timer.time_left / $UI/Timer.wait_time)*100
+	if ($UI/Timer.time_left <= 0 && timerRunning):
+		show_failure()

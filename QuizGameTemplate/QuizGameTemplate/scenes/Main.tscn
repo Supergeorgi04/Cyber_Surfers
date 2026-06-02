@@ -1843,6 +1843,17 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nxtc6")
 animation = &"correct"
 
+[node name="TimerBar" type="ProgressBar" parent="UI" unique_id=158973242]
+offset_left = 992.0
+offset_top = 188.0
+offset_right = 1248.0
+offset_bottom = 216.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="UI" unique_id=1256047505]
+wait_time = 30.0
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=861289603]
 libraries/ = SubResource("AnimationLibrary_jlsqs")
 

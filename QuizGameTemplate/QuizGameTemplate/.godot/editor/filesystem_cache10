@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1780320884
+::res://::1780402960
 export_presets.cfg::TextFile::-1::1779122735::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::4395642367362161479::1779122735::1780315159::1::::<><><>0<>0<>fde1a743bcba818f56d8115677174fc9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 SaveManager.gd::GDScript::7449544421560663315::1780315121::0::1::::<>Node<><>0<>0<><>::
@@ -37,6 +37,6 @@ ui_wrong.png::CompressedTexture2D::1741464871547549736::1780315121::1780315159::
 virus04.png::CompressedTexture2D::7241612650568677216::1780315121::1780315159::1::::<><><>0<>0<>9193b0628b75f9b4e8470f87f8d22bca<>res://.godot/imported/virus04.png-ea2f942fe9e1aeb803b1b7541183e005.ctex::
 ::res://assets/texts/::1780315121
 questions.json::JSON::-1::1780315121::0::1::::<><><>0<>0<><>::
-::res://scenes/::1780320876
+::res://scenes/::1780322340
 Main.gd::GDScript::2416414111592373961::1780320785::0::1::::<>Control<><>0<>0<><>::
-Main.tscn::PackedScene::2523217937631975539::1780320876::0::1::::<><><>0<>0<><>::uid://baor8tn2kiaf6::::res://scenes/Main.gd<>uid://dv1e7qq4ecytw::::res://assets/images/bg_2.png<>uid://dbf5kjriry0g7::::res://assets/images/virus04.png<>uid://cn4mm5nbs8jww::::res://assets/images/surfer_board.png<>uid://dryppwaiaep3e::::res://assets/images/surfer01_sprites.png<>uid://coo4n5ed5msdf::::res://assets/images/15.jpg<>uid://bdoch4r5rdcot::::res://assets/images/surfer_headphones.png<>uid://bte8ywioakn8n::::res://assets/images/bg_1.png<>uid://ct4s8ycd0xm47::::res://assets/images/ui_correct.png<>uid://y2tw33obxu3y::::res://assets/images/ui_wrong.png<>uid://cmkpj1piosrgp::::res://assets/images/chip.png<>uid://ppg64cwohrde::::res://assets/images/chip_lost.png
+Main.tscn::PackedScene::2523217937631975539::1780322340::0::1::::<><><>0<>0<><>::uid://baor8tn2kiaf6::::res://scenes/Main.gd<>uid://dv1e7qq4ecytw::::res://assets/images/bg_2.png<>uid://dbf5kjriry0g7::::res://assets/images/virus04.png<>uid://cn4mm5nbs8jww::::res://assets/images/surfer_board.png<>uid://dryppwaiaep3e::::res://assets/images/surfer01_sprites.png<>uid://coo4n5ed5msdf::::res://assets/images/15.jpg<>uid://bdoch4r5rdcot::::res://assets/images/surfer_headphones.png<>uid://bte8ywioakn8n::::res://assets/images/bg_1.png<>uid://ct4s8ycd0xm47::::res://assets/images/ui_correct.png<>uid://y2tw33obxu3y::::res://assets/images/ui_wrong.png<>uid://cmkpj1piosrgp::::res://assets/images/chip.png<>uid://ppg64cwohrde::::res://assets/images/chip_lost.png
