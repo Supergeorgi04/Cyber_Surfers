@@ -1,10 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1780402960
+::res://::1780753690
 export_presets.cfg::TextFile::-1::1779122735::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::4395642367362161479::1779122735::1780315159::1::::<><><>0<>0<>fde1a743bcba818f56d8115677174fc9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 SaveManager.gd::GDScript::7449544421560663315::1780315121::0::1::::<>Node<><>0<>0<><>::
 ::res://assets/::1779122735
-::res://assets/images/::1780319883
+::res://assets/images/::1780753682
 01.png::CompressedTexture2D::6160033135773724016::1779122735::1780315160::1::::<><><>0<>0<>aeec1dd0465121c4402f09a6d623df3b<>res://.godot/imported/01.png-d4e057483c492fc9b6cfae9dfcc97756.ctex::
 02.jpg::CompressedTexture2D::411404916966096497::1779122735::1780315160::1::::<><><>0<>0<>29a29f4dea25b2e9471a3d9cac359649<>res://.godot/imported/02.jpg-329016f6965402ad6acb83ebef5f0005.ctex::
 03.jpg::CompressedTexture2D::708732766784040836::1779122735::1780315160::1::::<><><>0<>0<>3fbc81e32719657351305e3a2d4248b9<>res://.godot/imported/03.jpg-cc0179c06fa438907bd8cb5a56e61a59.ctex::
@@ -20,6 +20,7 @@ SaveManager.gd::GDScript::7449544421560663315::1780315121::0::1::::<>Node<><>0<>
 13.jpg::CompressedTexture2D::3327876166841673328::1779122735::1780315160::1::::<><><>0<>0<>a51660e61387b4af33bace392333af38<>res://.godot/imported/13.jpg-05507f0ae0303a14dec64db8b86a6144.ctex::
 14.jpg::CompressedTexture2D::4635674496916207056::1779122735::1780315160::1::::<><><>0<>0<>480cfec6a9faf9bc1fc0c5102d6dccb1<>res://.godot/imported/14.jpg-502d58d6336dc2c923321304cf4e985d.ctex::
 15.jpg::CompressedTexture2D::5786172057043094355::1780315121::1780315159::1::::<><><>0<>0<>4a089ebd76bb9f94d15accbf6350d691<>res://.godot/imported/15.jpg-9f39d72352a5d0a215b195d5469f5515.ctex::
+360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg::CompressedTexture2D::7182897913331887878::1780753673::1780753691::1::::<><><>0<>0<>a5b0c94150c3100dfaec960a0e9726db<>res://.godot/imported/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg-8f55d0173b4bc08cd96ac9d6971a0d52.ctex::
 bg_1.png::CompressedTexture2D::3730313912155609907::1780315121::1780315159::1::::<><><>0<>0<>aa58fdb701a7979fe50b1cab2f196019<>res://.godot/imported/bg_1.png-901000431aaa9000dd6b52e991bba239.ctex::
 bg_2.png::CompressedTexture2D::8687202468873112556::1780315121::1780315159::1::::<><><>0<>0<>19dc11e09e9102ed19d1a21d37691d5c<>res://.godot/imported/bg_2.png-25cac279bc923a2b3115ddc971bc9da0.ctex::
 bg_3.png::CompressedTexture2D::5752010095871432269::1780315121::1780315159::1::::<><><>0<>0<>a757e9725da26ddff6a9d1f13e369ca0<>res://.godot/imported/bg_3.png-622d14b2bdd9c74a5aba0cfca8d2d7a5.ctex::
@@ -35,8 +36,10 @@ surfer_jump.png::CompressedTexture2D::7924030555224747584::1780315121::178031515
 ui_correct.png::CompressedTexture2D::6167449452265854674::1780315121::1780315159::1::::<><><>0<>0<>e3d3b854b80e4701dfc5877b1e4b9a6b<>res://.godot/imported/ui_correct.png-2df6c98e5d660ab7b832bcec92177ab9.ctex::
 ui_wrong.png::CompressedTexture2D::1741464871547549736::1780315121::1780315159::1::::<><><>0<>0<>0ae6a0634f2c1b606cbba11a3269e952<>res://.godot/imported/ui_wrong.png-0c53e4824300b9bc70733364d78991f7.ctex::
 virus04.png::CompressedTexture2D::7241612650568677216::1780315121::1780315159::1::::<><><>0<>0<>9193b0628b75f9b4e8470f87f8d22bca<>res://.godot/imported/virus04.png-ea2f942fe9e1aeb803b1b7541183e005.ctex::
-::res://assets/texts/::1780315121
+::res://assets/texts/::1780753662
+f2-tecnocratica-ffp.ttf::FontFile::794398735696846247::1780753623::1780753691::1::::<><><>0<>0<>bcce4b2274a027f1cc0f6a81de1ac484<>res://.godot/imported/f2-tecnocratica-ffp.ttf-389084344bd08ebf9bd82bfba0e90fab.fontdata::
 questions.json::JSON::-1::1780315121::0::1::::<><><>0<>0<><>::
-::res://scenes/::1780322340
-Main.gd::GDScript::2416414111592373961::1780320785::0::1::::<>Control<><>0<>0<><>::
-Main.tscn::PackedScene::2523217937631975539::1780322340::0::1::::<><><>0<>0<><>::uid://baor8tn2kiaf6::::res://scenes/Main.gd<>uid://dv1e7qq4ecytw::::res://assets/images/bg_2.png<>uid://dbf5kjriry0g7::::res://assets/images/virus04.png<>uid://cn4mm5nbs8jww::::res://assets/images/surfer_board.png<>uid://dryppwaiaep3e::::res://assets/images/surfer01_sprites.png<>uid://coo4n5ed5msdf::::res://assets/images/15.jpg<>uid://bdoch4r5rdcot::::res://assets/images/surfer_headphones.png<>uid://bte8ywioakn8n::::res://assets/images/bg_1.png<>uid://ct4s8ycd0xm47::::res://assets/images/ui_correct.png<>uid://y2tw33obxu3y::::res://assets/images/ui_wrong.png<>uid://cmkpj1piosrgp::::res://assets/images/chip.png<>uid://ppg64cwohrde::::res://assets/images/chip_lost.png
+::res://scenes/::1780753645
+Main.gd::GDScript::2416414111592373961::1780407344::0::1::::<>Control<><>0<>0<><>::
+Main.tscn::PackedScene::2523217937631975539::1780753540::0::1::::<><><>0<>0<><>::uid://baor8tn2kiaf6::::res://scenes/Main.gd<>uid://dv1e7qq4ecytw::::res://assets/images/bg_2.png<>uid://dbf5kjriry0g7::::res://assets/images/virus04.png<>uid://cn4mm5nbs8jww::::res://assets/images/surfer_board.png<>uid://dryppwaiaep3e::::res://assets/images/surfer01_sprites.png<>uid://coo4n5ed5msdf::::res://assets/images/15.jpg<>uid://bdoch4r5rdcot::::res://assets/images/surfer_headphones.png<>uid://bte8ywioakn8n::::res://assets/images/bg_1.png<>uid://ct4s8ycd0xm47::::res://assets/images/ui_correct.png<>uid://y2tw33obxu3y::::res://assets/images/ui_wrong.png<>uid://cmkpj1piosrgp::::res://assets/images/chip.png<>uid://ppg64cwohrde::::res://assets/images/chip_lost.png
+title_screen.tscn::PackedScene::7306230495536727364::1780753612::0::1::::<><><>0<>0<><>::uid://inh1ajasw5x2::::res://scripts/start_button.gd<>uid://lk2vptkd771d::::res://assets/texts/f2-tecnocratica-ffp.ttf<>uid://dalpjq0uod8f7::::res://assets/images/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg
