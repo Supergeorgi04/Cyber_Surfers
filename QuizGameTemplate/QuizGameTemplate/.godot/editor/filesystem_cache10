@@ -1,9 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1779902107
+::res://::1780824500
 export_presets.cfg::TextFile::-1::1779727721::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::4395642367362161479::1779727721::1779876116::1::::<><><>0<>0<>fde1a743bcba818f56d8115677174fc9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1779727721
-::res://assets/images/::1779904085
+::res://assets/images/::1779904086
 01.png::CompressedTexture2D::6160033135773724016::1779727721::1779876116::1::::<><><>0<>0<>aeec1dd0465121c4402f09a6d623df3b<>res://.godot/imported/01.png-d4e057483c492fc9b6cfae9dfcc97756.ctex::
 02.jpg::CompressedTexture2D::411404916966096497::1779727721::1779876116::1::::<><><>0<>0<>29a29f4dea25b2e9471a3d9cac359649<>res://.godot/imported/02.jpg-329016f6965402ad6acb83ebef5f0005.ctex::
 03.jpg::CompressedTexture2D::708732766784040836::1779727721::1779876116::1::::<><><>0<>0<>3fbc81e32719657351305e3a2d4248b9<>res://.godot/imported/03.jpg-cc0179c06fa438907bd8cb5a56e61a59.ctex::
@@ -22,9 +22,9 @@ icon.svg::CompressedTexture2D::4395642367362161479::1779727721::1779876116::1:::
 ::res://assets/texts/::1779903968
 f2-tecnocratica-ffp.ttf::FontFile::794398735696846247::1779903968::1779903968::1::::<><><>0<>0<>bcce4b2274a027f1cc0f6a81de1ac484<>res://.godot/imported/f2-tecnocratica-ffp.ttf-389084344bd08ebf9bd82bfba0e90fab.fontdata::
 questions.json::JSON::-1::1779727721::0::1::::<><><>0<>0<><>::
-::res://scenes/::1779904033
+::res://scenes/::1779904392
 Main.tscn::PackedScene::2523217937631975539::1779902079::0::1::::<><><>0<>0<><>::uid://baor8tn2kiaf6::::res://scripts/Main.gd<>uid://ct0730xrvvcei::::res://assets/images/01.png
-title_screen.tscn::PackedScene::7306230495536727364::1779904033::0::1::::<><><>0<>0<><>::uid://inh1ajasw5x2::::res://scripts/start_button.gd<>uid://lk2vptkd771d::::res://assets/texts/f2-tecnocratica-ffp.ttf
+title_screen.tscn::PackedScene::7306230495536727364::1779904392::0::1::::<><><>0<>0<><>::uid://inh1ajasw5x2::::res://scripts/start_button.gd<>uid://lk2vptkd771d::::res://assets/texts/f2-tecnocratica-ffp.ttf<>uid://dalpjq0uod8f7::::res://assets/images/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg
 ::res://scripts/::1779902079
 Main.gd::GDScript::2416414111592373961::1779727729::0::1::::<>Control<><>0<>0<><>::
 start_button.gd::GDScript::588819123426122673::1779902072::0::1::::<>Button<><>0<>0<><>::

@@ -1,3 +1,5 @@
-res://scripts/start_button.gd
-res://scenes/Main.tscn
 res://scenes/title_screen.tscn
+res://scripts/exit_button.gd
+res://scripts/lore_button.gd
+res://scenes/LORE.tscn
+res://scripts/return_button.gd

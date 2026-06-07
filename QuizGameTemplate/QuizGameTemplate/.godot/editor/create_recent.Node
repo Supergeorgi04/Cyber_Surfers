@@ -1,3 +1,5 @@
-Panel
-Label
 Button
+RichTextLabel
+Panel
+VBoxContainer
+Label

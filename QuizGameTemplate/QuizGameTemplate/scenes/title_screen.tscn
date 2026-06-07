@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://inh1ajasw5x2" path="res://scripts/start_button.gd" id="1_fgkus"]
 [ext_resource type="FontFile" uid="uid://lk2vptkd771d" path="res://assets/texts/f2-tecnocratica-ffp.ttf" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://dalpjq0uod8f7" path="res://assets/images/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg" id="3_s4lrb"]
+[ext_resource type="Script" uid="uid://bsxcs3e66hptv" path="res://scripts/lore_button.gd" id="4_dc4i4"]
+[ext_resource type="Script" uid="uid://1250fq6bldwh" path="res://scripts/exit_button.gd" id="4_mgrm8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mgrm8"]
 texture = ExtResource("3_s4lrb")
@@ -33,26 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mgrm8")
 
-[node name="start button" type="Button" parent="." unique_id=643451900]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = -39.5
-offset_right = 125.5
-offset_bottom = 39.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_sa3yf")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_fgkus")
-text = "start"
-script = ExtResource("1_fgkus")
-
 [node name="Label" type="Label" parent="." unique_id=2066881553]
 layout_mode = 1
 anchors_preset = 5
@@ -70,4 +52,50 @@ text = "knoledge runner
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="start button" to="start button" method="_on_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=149889487]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -87.5
+offset_right = 171.5
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start button" type="Button" parent="VBoxContainer" unique_id=643451900]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sa3yf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgkus")
+text = "start"
+script = ExtResource("1_fgkus")
+
+[node name="lore button" type="Button" parent="VBoxContainer" unique_id=1115768257]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sa3yf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgkus")
+text = "lore "
+script = ExtResource("4_dc4i4")
+
+[node name="exit button" type="Button" parent="VBoxContainer" unique_id=1914602642]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sa3yf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgkus")
+text = "exit"
+script = ExtResource("4_mgrm8")
+
+[connection signal="pressed" from="VBoxContainer/start button" to="VBoxContainer/start button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/lore button" to="VBoxContainer/lore button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit button" to="VBoxContainer/exit button" method="_on_pressed"]
