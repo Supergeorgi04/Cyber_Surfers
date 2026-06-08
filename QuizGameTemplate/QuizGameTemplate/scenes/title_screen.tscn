@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dcdgswolxuop5"]
 
-[ext_resource type="Script" path="res://start_button.gd" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://inh1ajasw5x2" path="res://start_button.gd" id="1_fgkus"]
 [ext_resource type="FontFile" uid="uid://lk2vptkd771d" path="res://assets/texts/f2-tecnocratica-ffp.ttf" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://dalpjq0uod8f7" path="res://assets/images/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg" id="3_s4lrb"]
+[ext_resource type="AudioStream" uid="uid://wysbs6yyoqp8" path="res://assets/audio/sfx_start.ogg" id="4_mgrm8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mgrm8"]
 texture = ExtResource("3_s4lrb")
@@ -52,6 +53,9 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_fgkus")
 text = "Start"
 script = ExtResource("1_fgkus")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="start button" unique_id=866653671]
+stream = ExtResource("4_mgrm8")
 
 [node name="Label" type="Label" parent="." unique_id=2066881553]
 layout_mode = 1

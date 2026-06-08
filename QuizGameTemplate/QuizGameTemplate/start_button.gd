@@ -3,5 +3,6 @@ extends Button
 
 
 func _on_pressed() -> void:
+	$AudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 	pass # Replace with function body.

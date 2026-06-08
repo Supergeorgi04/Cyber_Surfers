@@ -96,6 +96,7 @@ func refresh_scene():
 	if timerWait < 1:
 		timerWait = 1
 	print(timerWait)
+	$AudioMusic.pitch_scale = (30-timerWait)/80 + 1
 	
 	index_item +=1
 	##if index_item >= items.size():
@@ -171,6 +172,7 @@ func gameOver():
 		highscore = correct
 		SaveManager.saveScore(highscore)
 		QuestionItems.text = "New High Score!\nYour Score: {score}".format({"score": correct})
+		$AudioMusic.play()
 	else:
 		QuestionItems.text = "Game Over.\nYour Score: {score}\nHigh Score: {high}".format({"score": correct, "high": highscore})
 	QuestionItems.show()
@@ -202,6 +204,10 @@ func _process(_delta):
 	if Input.is_action_pressed("debug_kill"):
 		lives = 1
 		print("kill")
+	
+	if Input.is_action_pressed("debug_correct"):
+		correct += 1
+		show_congratulations()
 	
 	#Timer Code
 	if($UI/Timer.time_left >= 0):
