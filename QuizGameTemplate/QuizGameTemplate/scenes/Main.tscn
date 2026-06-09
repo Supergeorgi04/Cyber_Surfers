@@ -1667,6 +1667,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q8u5g")
 
 [node name="AnswersList" type="ItemList" parent="UI" unique_id=1788075931]
+custom_minimum_size = Vector2(500, 100)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -1679,7 +1680,8 @@ offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_constants/v_separation = 6
+theme_override_font_sizes/font_size = 22
 allow_reselect = true
 item_count = 4
 same_column_width = true
