@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://1l6tloelioqw"]
+
+[ext_resource type="AudioStream" uid="uid://chn2yp2klj37g" path="res://assets/audio/mus_title.ogg" id="1_hki4o"]
+[ext_resource type="Script" uid="uid://pdsdqgx7va2a" path="res://scenes/menu_audio_player.gd" id="2_hki4o"]
+
+[node name="MenuAudioPlayer" type="AudioStreamPlayer" unique_id=1018111501]
+stream = ExtResource("1_hki4o")
+script = ExtResource("2_hki4o")
