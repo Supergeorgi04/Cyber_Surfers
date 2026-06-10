@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveManager="*uid://deeu546d3r3b0"
+MenuAudioPlayer="*uid://1l6tloelioqw"
 
 [display]
 

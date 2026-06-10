@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dvjkrwl25kka2"]
+
+[ext_resource type="Texture2D" uid="uid://dalpjq0uod8f7" path="res://assets/images/360_F_1576362300_8hL1NSpR8CSoHc5UzsXs3f1XTFDGhJIj.jpg" id="1_hcedj"]
+[ext_resource type="FontFile" uid="uid://lk2vptkd771d" path="res://assets/texts/f2-tecnocratica-ffp.ttf" id="2_x5gtj"]
+[ext_resource type="Script" uid="uid://dryaq281x20jn" path="res://scripts/return_button.gd" id="3_usvdu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5gtj"]
+texture = ExtResource("1_hcedj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5gtj"]
+bg_color = Color(0, 0.1254902, 0.36862746, 1)
+
+[node name="Control" type="Control" unique_id=1964678910]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1686162934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x5gtj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=899674942]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 39.0
+offset_right = 1245.0
+offset_bottom = 670.0
+theme_override_colors/default_color = Color(0.63, 0.33075, 0.031500008, 1)
+theme_override_fonts/normal_font = ExtResource("2_x5gtj")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5gtj")
+text = "Το έτος 2189, η Γη κυβερνιόταν από το Δίκτυο Nexus, μια τεχνητή νοημοσύνη που συνέδεε κάθε άνθρωπο μέσω νευρωνικών εμφυτευμάτων. Για δεκαετίες, ο κόσμος ζούσε σε μια ψηφιακή ουτοπία. Μέχρι που εμφανίστηκε ο Ιός Σίγμα.
+
+Σκοπος σου, ταξιδιώτη του Nexus, ειναι να διαφύγεις τον ιό Σίγμα! Όμως αυτός θα σου προβάλλει ερωτήσεις για να σε σταματήσει. Απάντησε σώστα για να τον αποφύγεις. Εχείς τρεις ζωές. Καλή επιτυχία !
+-----------------------------------------
+Αυτό το παιχνίδι κατασκευάστηκε αποκλειστικά για την εκμάθηση Προγραμματιστικών εννοιών και λογικής σε παιδιά α’ και β’ βαθμίδων εκπαίδευσης. Δεν βασίζεται σε πραγματικές σκηνές ή χαρακτήρες.
+
+Το παιχνίδι κατασκευάστηκε από την ομάδα:
+Ανδρικόπουλος Γεώργιος, Αυλωνίτης Δημήτριος,
+Βαρταλάμης Γεώργιος, Ζαχαριάδης Μάριος"
+
+[node name="return_button" type="Button" parent="." unique_id=2040109728]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 570.0
+offset_right = 1108.0
+offset_bottom = 632.0
+theme_override_colors/font_color = Color(0.93, 0.466085, 0.25109997, 1)
+text = "επιστροφή"
+script = ExtResource("3_usvdu")
+
+[connection signal="pressed" from="return_button" to="return_button" method="_on_pressed"]
