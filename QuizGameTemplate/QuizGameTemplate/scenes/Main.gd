@@ -201,14 +201,6 @@ func _on_restart_button_pressed():
 
 
 func _process(_delta):
-	if Input.is_action_pressed("debug_kill"):
-		lives = 1
-		print("kill")
-	
-	if Input.is_action_pressed("debug_correct"):
-		correct += 1
-		show_congratulations()
-	
 	#Timer Code
 	if($UI/Timer.time_left >= 0):
 		$UI/TimerBar.value = ($UI/Timer.time_left / $UI/Timer.wait_time)*100
